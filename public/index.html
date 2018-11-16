@@ -1,0 +1,29 @@
+<html>
+
+<head>
+    <title>TO-DO LIST</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+    <script src="javascripts/main.js"></script>
+    <link rel="stylesheet" href="stylesheets/style.css">
+</head>
+
+<body ng-app="task" ng-controller="MainCtrl">
+    <div>
+        <form>
+            <input type="text" ng-model="name" placeholder="enter name" /><br>
+            <input type="text" ng-model="task" placeholder="enter task" /><br>
+        </form>
+        <div id="buttons">
+            <button id="remove" ng-click="delete()">Remove task</button>
+            <button id="add" ng-click="addTask()">Add task</button>
+        </div>
+        <div id="list" ng-repeat="task in tasks">
+            <input type="checkbox" id="check" ng-click="checked(task)">
+            <p id="name">{{ task.name }}</p>
+            <p id="task">{{ task.task }}</p>
+        </div>
+    </div>
+</body>
+
+</html>
